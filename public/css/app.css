@@ -19,11 +19,11 @@ nav li a:hover {
 }
 
 section.hero {
-  background: #F8F8F8;
+  background: #f8f4f4;
 }
 
 .size {
-  background: #F8F8F8;
+  background: #f8f4f4;
 }
 
 .add-to-cart {
@@ -35,4 +35,38 @@ section.hero {
   background: #FE5F1E;
   border-color: #fff;
   color: #fff;
+}
+
+.btn-primary {
+  border: 2px solid;
+  color: #fff;
+  background: #FE5F1E;
+  transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover {
+  background: #b23301;
+}
+
+section.cart {
+  background: #f8f4f4;
+}
+section.cart .Amount {
+  color: #FE5F1E;
+}
+
+.orengeCol {
+  color: #FE5F1E;
+}
+
+.login {
+  background: #f8f4f4;
+  height: 88vh;
+}
+
+.form {
+  background-color: rgb(255, 243, 232);
+}
+
+a:hover {
+  color: #b23301;
 }

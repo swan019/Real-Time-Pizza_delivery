@@ -4,6 +4,7 @@ body {
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
     color: $dark;
+    
 }
 
 nav li:last-child a {
@@ -42,5 +43,40 @@ section.hero {
         background: $primary;
         border-color: $pure;
         color: $pure;
+    }
+}
+
+.btn-primary {
+    border: 2px solid;
+    color: $pure;
+    background: $primary;
+    transition: $smooth;
+    &:hover {
+        background: $primary-hover;
+    }
+}
+
+section.cart {
+    background: $secondry;
+    .Amount {
+        color: $primary;
+    }
+}
+
+.orengeCol {
+    color: $primary;
+}
+
+.login {
+    background: $secondry;
+    height: 88vh;
+}
+.form {
+    background-color: rgb(255, 243, 232);
+}
+
+a {
+    &:hover {
+        color: $primary-hover;
     }
 }
