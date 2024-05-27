@@ -1,0 +1,22 @@
+{
+    1] Create directory structure
+    2] Create NPM project and install all dependancies
+        -dependancies
+            -express
+            -ejs express-ejs-layouts
+        -Dev dependancies
+            -nodeman
+
+            {
+                    https://chatgpt.com/share/f82d9d79-32c8-465f-a42a-3b036f67e657
+            }
+
+    3] Create express server - Create a server.js file
+    4] install Larvel Mix
+        -setup js and scss
+    5] install tailwind Css
+    4] create Home Page using HTML and CSS
+        -include Tailwind
+    5] Create Cart Page
+        -Order summary section
+}

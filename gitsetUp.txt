@@ -1,0 +1,7 @@
+echo "# Real-Time-Pizza_delivery" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/swan019/Real-Time-Pizza_delivery.git
+git push -u origin main
