@@ -10,6 +10,7 @@ const session = require('express-session')
 const flash = require('express-flash')
 const { collection } = require('./app/models/menu.js')
 const MongoDbStore = require('connect-mongo')
+const passport = require('passport')
 
 
 //Database connection
@@ -29,6 +30,7 @@ const connect = () => {
 }
 connect();
 
+
 // Session store
 let mongoStore = MongoDbStore.create({
     mongoUrl: 'mongodb://localhost:27017/Pizzas',
@@ -44,6 +46,12 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 } // 1 day
 }));
 
+//passport config
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.use(flash())
 
 
@@ -54,11 +62,13 @@ app.use(express.static('public'));
 app.use(expressLayout)
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 // global middleware
 app.use((req, res, next) => {
     res.locals.session = req.session
+    res.locals.user = req.user
     next()
 })
 
