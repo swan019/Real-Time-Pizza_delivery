@@ -329,7 +329,8 @@ a:hover {
 }
 
 .license-block p {
-  margin: 0; /* Remove default margins */
+  margin: 0;
+  /* Remove default margins */
 }
 
 .text-center {
@@ -337,9 +338,11 @@ a:hover {
 }
 
 .text-gray-500 {
-  color: #6B7280; /* Tailwind CSS gray-500 color */
+  color: #6B7280;
+  /* Tailwind CSS gray-500 color */
 }
 
 .text-xs {
-  font-size: 0.75rem; /* Tailwind CSS xs font size */
+  font-size: 0.75rem;
+  /* Tailwind CSS xs font size */
 }

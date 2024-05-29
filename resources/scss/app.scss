@@ -9,11 +9,12 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    
+
 }
 
 nav li:last-child a {
     background: $primary;
+
     &:hover {
 
         background: $primary-hover;
@@ -36,7 +37,7 @@ section.hero {
     background: $secondry;
 }
 
-.size{
+.size {
     background: $secondry;
 }
 
@@ -44,6 +45,7 @@ section.hero {
     border: 2px solid $primary;
     color: $primary;
     transition: $smooth;
+
     &:hover {
         background: $primary;
         border-color: $pure;
@@ -56,6 +58,7 @@ section.hero {
     color: $pure;
     background: $primary;
     transition: $smooth;
+
     &:hover {
         background: $primary-hover;
         color: white;
@@ -64,6 +67,7 @@ section.hero {
 
 section.cart {
     background: $secondry;
+
     .Amount {
         color: $primary;
     }
@@ -79,6 +83,7 @@ section.cart {
     background: $secondry;
     height: 88vh;
 }
+
 .form {
     background-color: rgb(255, 243, 232);
 }
@@ -91,8 +96,8 @@ a {
 
 
 .noty_theme__mint {
-    border-radius: 50px!important;
-    padding-left: 8px!important;
+    border-radius: 50px !important;
+    padding-left: 8px !important;
 }
 
 
@@ -105,7 +110,8 @@ a {
 }
 
 .license-block p {
-    margin: 0; /* Remove default margins */
+    margin: 0;
+    /* Remove default margins */
 }
 
 .text-center {
@@ -113,9 +119,11 @@ a {
 }
 
 .text-gray-500 {
-    color: #6B7280; /* Tailwind CSS gray-500 color */
+    color: #6B7280;
+    /* Tailwind CSS gray-500 color */
 }
 
 .text-xs {
-    font-size: 0.75rem; /* Tailwind CSS xs font size */
+    font-size: 0.75rem;
+    /* Tailwind CSS xs font size */
 }
