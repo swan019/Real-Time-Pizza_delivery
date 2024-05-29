@@ -19,4 +19,10 @@
         -include Tailwind
     5] Create Cart Page
         -Order summary section
+        -Empty cart selection
+    6] move all routes to routes file
+    7] create dedicated controllers
+    8] Add to cart functnallity
+        - connect to mongodb
+        
 }

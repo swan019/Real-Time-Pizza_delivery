@@ -1,93 +1,77 @@
-<section class="cart py-16">
+<section class="cart py-16 ">
+    <% if(session.cart) { %>
+        <div class="order container mx-auto w-1/2 ">
+            <div class="flex items-center border-b border-gray-300 pb-4">
+                <img src="/img/cart-black.png" alt="">
+                <h1 class="font-bold text-2xl ml-4">Order summary</h1>
+            </div>
 
-    <div class="order container mx-auto w-1/2">
-        <div class="flex items-center border-b border-gray-300 pb-4">
-            <img src="/img/cart-black.png" alt="">
-            <h1 class="font-bold text-2xl ml-4">Order summary</h1>
+            <div class="pizza-list">
+                <% for (let pizza of Object.values(session.cart.items)) { %>
+                <div class="flex items-center my-8">
+                    <img src="/img/<%=pizza.item.image%>" alt="" class="w-24">
+                    <div class="ml-4 flex-1">
+                        <h1><%=pizza.item.name%></h1>
+                        <span><%=pizza.item.size%></span>
+                    </div>
+
+                    <span class="flex-1"><%=pizza.qty%>Pcs</span>
+                    <span class="font-bold text-lg">₹<%=pizza.item.price * pizza.qty%></span>
+                </div>
+
+                <% } %>
+
+
+                <hr>
+
+                <div class="text-right py-4">
+                    <div>
+                        <span class="text-lg font-bold">
+                            Total Amount:
+                        </span>
+                        <span class="Amount text-2xl font-bold ml-2">₹<%= session.cart.totalPrice%></span>
+                    </div>
+
+                    <div>
+                        <form action="">
+                            <input type="text" class="border border-gray-400 py-2 w-1/2 mb-4 px-1
+                                        mt-12" placeholder="Phone number">
+                            <input type="text" class="border border-gray-400 py-2 w-1/2 px-1" placeholder="Address">
+                            <div>
+                                <button type="submit"
+                                    class=" px-6 py-2 rounded-full btn-primary text-white font-bold mt-4">Order Now</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- <a href="" class=" inline-block py-2 px-6 rounded-full btn-primary text-white font-bold mt-4 cursor-pointer mt-6">Login to continue</a> -->
+
+                </div>
+
+
+            </div>
         </div>
+    <% } else {%>
 
-        <div class="pizza-list">
-            <div class="flex items-center my-8">
-                <img src="/img/pizza.png" alt="" class="w-24">
-                <div class="ml-4 flex-1">
-                    <h1>Margherita</h1>
-                    <span>MEDIUM</span>
-                </div>
-
-                <span class="flex-1">1 Pcs</span>
-                <span class="font-bold text-lg">₹250</span>
-            </div>
-            <div class="flex items-center my-8">
-                <img src="/img/pizza.png" alt="" class="w-24">
-                <div class="ml-4 flex-1">
-                    <h1>Margherita</h1>
-                    <span>MEDIUM</span>
-                </div>
-
-                <span class="flex-1">1 Pcs</span>
-                <span class="font-bold text-lg">₹250</span>
-            </div>
-            <div class="flex items-center my-8">
-                <img src="/img/pizza.png" alt="" class="w-24">
-                <div class="ml-4 flex-1">
-                    <h1>Margherita</h1>
-                    <span>MEDIUM</span>
-                </div>
-
-                <span class="flex-1">1 Pcs</span>
-                <span class="font-bold text-lg">₹250</span>
-            </div>
-            <div class="flex items-center my-8">
-                <img src="/img/pizza.png" alt="" class="w-24">
-                <div class="ml-4 flex-1">
-                    <h1>Margherita</h1>
-                    <span>MEDIUM</span>
-                </div>
-
-                <span class="flex-1">1 Pcs</span>
-                <span class="font-bold text-lg">₹250</span>
-            </div>
-
-            <hr>
-
-            <div class="text-right py-4">
-                <div>
-                    <span class="text-lg font-bold">
-                        Total Amount:
-                    </span>
-                    <span class="Amount text-2xl font-bold ml-2">₹1050</span>
-                </div>
-
-                <div>
-                    <form action="">
-                        <input type="text" class="border border-gray-400 py-2 w-1/2 mb-4 px-1
-                                    mt-12" placeholder="Phone number">
-                        <input type="text" class="border border-gray-400 py-2 w-1/2 px-1" placeholder="Address">
-                        <div>
-                            <button type="submit" class=" px-6 py-2 rounded-full btn-primary text-white font-bold mt-4">Order Now</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- <a href="" class=" inline-block py-2 px-6 rounded-full btn-primary text-white font-bold mt-4 cursor-pointer mt-6">Login to continue</a> -->
-
-            </div>
-
-
-        </div>
-    </div>
-
-    <!-- <div class="empty-cart py-16">
+    <div class="empty-cart py-7">
         <div class="container mx-auto text-center">
             <h1 class="text-3xl font-bold mb-2">Cart Empty !</h1>
-            <p class="text-gray-500 text-lg mb-12">You probably haven't ordered a pizza yet. <br>
+            <p class="text-gray-500 text-lg mb-6">You probably haven't ordered a pizza yet. <br>
                 To order a pizza, go to tha main page.
             </p>
-            <img src="/img/empty-cart.png" alt="" class="w-2/5 mx-auto">
-            <a href="/" class="inline-block px-6 py-2 rounded-full btn-primary text-white font-bold mt-12">Go back</a>
+            <img src="/img/empty-cart.png" alt="" class="w-1/5 mx-auto">
+            <a href="/" class="inline-block px-6 py-2  rounded-full btn-primary text-white font-bold mt-20">Go back</a>
         </div>
-    </div> -->
+    </div> 
 
+    
+    <% }%>
+    
+    <!-- <div class="license-block">
+       <p class="text-center text-gray-500 text-xs mb-[-55px] mt-[25px]">
+           &copy;2024 SMI Corp. All rights reserved.
+       </p>
+   </div> -->
 
 
 </section>

@@ -1,9 +1,14 @@
 @import './variable';
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
 
 body {
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
     color: $dark;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     
 }
 
@@ -53,6 +58,7 @@ section.hero {
     transition: $smooth;
     &:hover {
         background: $primary-hover;
+        color: white;
     }
 }
 
@@ -61,6 +67,8 @@ section.cart {
     .Amount {
         color: $primary;
     }
+
+    min-height: 88vh;
 }
 
 .orengeCol {
@@ -79,4 +87,35 @@ a {
     &:hover {
         color: $primary-hover;
     }
+}
+
+
+.noty_theme__mint {
+    border-radius: 50px!important;
+    padding-left: 8px!important;
+}
+
+
+
+.license-block {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.license-block p {
+    margin: 0; /* Remove default margins */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-gray-500 {
+    color: #6B7280; /* Tailwind CSS gray-500 color */
+}
+
+.text-xs {
+    font-size: 0.75rem; /* Tailwind CSS xs font size */
 }
