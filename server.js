@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 3000
 const mongoose = require('mongoose')
 const session = require('express-session')
 const flash = require('express-flash')
-const { collection } = require('./app/models/menu.js')
 const MongoDbStore = require('connect-mongo')
 const passport = require('passport')
 
@@ -57,11 +56,6 @@ app.use(flash())
 
 //assets
 app.use(express.static('public'));
-
-// set Template engine
-app.use(expressLayout)
-app.set('views', path.join(__dirname, '/resources/views'))
-app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
@@ -71,6 +65,13 @@ app.use((req, res, next) => {
     res.locals.user = req.user
     next()
 })
+
+
+// set Template engine
+app.use(expressLayout)
+app.set('views', path.join(__dirname, '/resources/views'))
+app.set('view engine', 'ejs')
+
 
 require('./routes/web.js')(app)
 

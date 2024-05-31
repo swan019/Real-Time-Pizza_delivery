@@ -346,3 +346,7 @@ a:hover {
   font-size: 0.75rem;
   /* Tailwind CSS xs font size */
 }
+
+a.link {
+  color: #FE5F1E;
+}
