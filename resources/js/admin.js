@@ -16,6 +16,7 @@ export function initAdmin(socket) {
         markup = generateMarkup(orders)
         orderTableBody.innerHTML = markup
     }).catch(err => {
+        console.log('In adminPage');
         console.log(err)
     })
 
@@ -83,7 +84,7 @@ export function initAdmin(socket) {
     socket.on('orderPlaced', (order) => {
         new Noty({
             type: 'success',
-            timeout: 1000,
+            timeout: 100,
             text: 'New order!',
             progressBar: false,
         }).show();
